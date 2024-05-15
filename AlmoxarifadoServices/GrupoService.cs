@@ -1,13 +1,7 @@
-﻿using AlmoxarifadoDomain.Models;
+﻿using AlmoxarifadoDomain.NomeDaPasta;
 using AlmoxarifadoInfrastructure.Data.Interfaces;
 using AlmoxarifadoServices.DTO;
 using AutoMapper;
-using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AlmoxarifadoServices
 {
@@ -44,12 +38,12 @@ namespace AlmoxarifadoServices
         public GrupoGetDTO CriarGrupo(GrupoPostDTO grupo)
         {
            var grupoSalvo = _grupoRepository.CriarGrupo(
-                new Grupo { NOME_GRU = grupo.NOME_GRU, SUGESTAO_GRU=grupo.SUGESTAO_GRU}
+                new Grupo { NomeGru = grupo.NOME_GRU, SugestaoGru=grupo.SUGESTAO_GRU}
              );
 
-            return new GrupoGetDTO { ID_GRU = grupoSalvo.ID_GRU,
-                                     NOME_GRU = grupoSalvo.NOME_GRU, 
-                                     SUGESTAO_GRU = grupoSalvo.SUGESTAO_GRU };
+            return new GrupoGetDTO { ID_GRU = grupoSalvo.IdGru,
+                                     NOME_GRU = grupoSalvo.NomeGru, 
+                                     SUGESTAO_GRU = grupoSalvo.SugestaoGru };
         }
 
     }
