@@ -1,22 +1,18 @@
 ﻿using AlmoxarifadoDomain.Models;
 using AlmoxarifadoDomain.NomeDaPasta;
 using AlmoxarifadoInfrastructure.Data.Interfaces;
-
 namespace AlmoxarifadoServices
 {
     public class EstoqueService
     {
         private readonly IEstoqueRepository _estoqueRepository;
-
         public EstoqueService(IEstoqueRepository estoqueRepository)
         {
             _estoqueRepository = estoqueRepository;
         }
-
         public void AtualizarEstoqueAoEntrarNotaFiscal(ItensNota itemNota)
         {
             var estoque = _estoqueRepository.ObterEstoquePorProduto(itemNota.IdPro);
-
             if (estoque != null)
             {
                 estoque.QtdPro += itemNota.QtdPro ?? 0;
@@ -48,12 +44,24 @@ namespace AlmoxarifadoServices
                 {
                     throw new InvalidOperationException("Quantidade insuficiente em estoque");
                 }
+                VerificarQuantidadeEmEstoqueSuficiente(estoque, itemRequisicao.QtdPro);
+
+                estoque.QtdPro -= itemRequisicao.QtdPro;
+                _estoqueRepository.AtualizarEstoque(estoque);
             }
             else
             {
                 throw new InvalidOperationException("Produto não encontrado no estoque");
             }
         }
+        private void VerificarQuantidadeEmEstoqueSuficiente(Estoque estoque, decimal quantidadeRequisitada)
+        {
+            if (quantidadeRequisitada > estoque.QtdPro)
+            {
+                throw new InvalidOperationException("Quantidade requisitada excede a quantidade em estoque");
+            }
+        }
+
     }
 
 }
