@@ -1,132 +1,137 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using AlmoxarifadoServices;
+using AlmoxarifadoServices.DTO;
+using AlmoxarifadoDomain.Models;
 using AlmoxarifadoDomain.NomeDaPasta;
 
 namespace AlmoxarifadoAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class ItensNotasController : ControllerBase
     {
-        private readonly xAlmoxarifadoContext _context;
-
-        public ItensNotasController(xAlmoxarifadoContext context)
+        private readonly ItensNotaService _itensNotaService;
+        private readonly EstoqueService _estoqueService;
+        public ItensNotasController(ItensNotaService itensNotaService, EstoqueService estoqueService)
         {
-            _context = context;
+            _itensNotaService = itensNotaService;
+            _estoqueService = estoqueService;
         }
 
-        // GET: api/ItensNotas
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ItensNotum>>> GetItensNota()
+        public IActionResult Get()
         {
-            if (_context.ItensNota == null)
-            {
-                return NotFound();
-            }
-            return await _context.ItensNota.ToListAsync();
-        }
-
-        // GET: api/ItensNotas/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<ItensNotum>> GetItensNotum(int id)
-        {
-            if (_context.ItensNota == null)
-            {
-                return NotFound();
-            }
-            var itensNotum = await _context.ItensNota.FindAsync(id);
-
-            if (itensNotum == null)
-            {
-                return NotFound();
-            }
-
-            return itensNotum;
-        }
-
-        // PUT: api/ItensNotas/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutItensNotum(int id, ItensNotum itensNotum)
-        {
-            if (id != itensNotum.ItemNum)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(itensNotum).State = EntityState.Modified;
-
             try
             {
-                await _context.SaveChangesAsync();
+                var itens = _itensNotaService.ObterTodosItensNota();
+                return Ok(itens);
             }
-            catch (DbUpdateConcurrencyException)
+            catch (Exception)
             {
-                if (!ItensNotumExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
 
-            return NoContent();
+                return StatusCode(500, "Ocorreu um erro ao acessar os dados. Por favor, tente novamente mais tarde.");
+            }
         }
 
-        // POST: api/ItensNotas
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpGet("{numero}")]
+        public IActionResult GetPorID(int numero)
+        {
+            try
+            {
+                var itens = _itensNotaService.ObterItemNotaPorNumero(numero);
+                if (itens == null)
+                {
+                    return StatusCode(404, "Nenhum Usuario Encontrado com Esse Codigo");
+                }
+                return Ok(itens);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Ocorreu um erro ao acessar os dados. Por favor, tente novamente mais tarde.");
+            }
+
+        }
+
         [HttpPost]
-        public async Task<ActionResult<ItensNotum>> PostItensNotum(ItensNotum itensNotum)
+        public IActionResult CriarItensNota(ItensNotaPostDTO itens)
         {
-            if (_context.ItensNota == null)
-            {
-                return Problem("Entity set 'xAlmoxarifadoContext.ItensNota'  is null.");
-            }
-            _context.ItensNota.Add(itensNotum);
             try
             {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (ItensNotumExists(itensNotum.ItemNum))
+                var itemSalvo = _itensNotaService.CriarItemNota(itens);
+                _estoqueService.AtualizarEstoqueAoEntrarNotaFiscal(new ItensNota
                 {
-                    return Conflict();
-                }
-                else
+                    ItemNum = itemSalvo.ItemNum,
+                    IdPro = itemSalvo.IdPro,
+                    IdNota = itemSalvo.IdNota,
+                    IdSec = itemSalvo.IdSec,
+                    QtdPro = itemSalvo.QtdPro,
+                    PreUnit = itemSalvo.PreUnit,
+                    TotalItem = itemSalvo.TotalItem,
+                    EstLin = itemSalvo.EstLin
+                });
+                return Ok(itemSalvo);
+            }
+            catch (Exception e)
+            {
+
+                return StatusCode(500, e.Message);
+            }
+        }
+
+        [HttpPut("{numero}")]
+        public IActionResult AtualizarItemNota(int numero, ItensNotaPutDTO novoItem)
+        {
+            try
+            {
+                var itemAtualizado = _itensNotaService.AtualizarItemNota(numero, novoItem);
+                if (itemAtualizado == null)
                 {
-                    throw;
+                    return StatusCode(404, "Nenhum item encontrado com este ID");
                 }
+                _estoqueService.AtualizarEstoqueAoEntrarNotaFiscal(new ItensNota
+                {
+                    ItemNum = itemAtualizado.ItemNum,
+                    IdPro = itemAtualizado.IdPro,
+                    IdNota = itemAtualizado.IdNota,
+                    IdSec = itemAtualizado.IdSec,
+                    QtdPro = itemAtualizado.QtdPro,
+                    PreUnit = itemAtualizado.PreUnit,
+                    TotalItem = itemAtualizado.TotalItem,
+                    EstLin = itemAtualizado.EstLin
+                });
+                return Ok(itemAtualizado);
             }
-
-            return CreatedAtAction("GetItensNotum", new { id = itensNotum.ItemNum }, itensNotum);
-        }
-
-        // DELETE: api/ItensNotas/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteItensNotum(int id)
-        {
-            if (_context.ItensNota == null)
+            catch (Exception e)
             {
-                return NotFound();
+                return StatusCode(500, e.Message);
             }
-            var itensNotum = await _context.ItensNota.FindAsync(id);
-            if (itensNotum == null)
-            {
-                return NotFound();
-            }
-
-            _context.ItensNota.Remove(itensNotum);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
         }
 
-        private bool ItensNotumExists(int id)
+
+        [HttpDelete("{numero}")]
+        public IActionResult DeletarItemNota(int numero)
         {
-            return (_context.ItensNota?.Any(e => e.ItemNum == id)).GetValueOrDefault();
+            try
+            {
+                var itemNota = _itensNotaService.ObterItemNotaPorNumero(numero);
+                if (itemNota == null)
+                {
+                    return StatusCode(404, "Nenhum item encontrado com este ID");
+                }
+
+                var itemDeletado = _itensNotaService.DeletarItemNota(itemNota);
+                if (itemDeletado == null)
+                {
+                    return StatusCode(404, "Ocorreu um erro ao excluir o item");
+                }
+
+                return Ok(itemDeletado);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Ocorreu um erro ao acessar os dados. Por favor, tente novamente mais tarde.");
+            }
         }
+
     }
 }

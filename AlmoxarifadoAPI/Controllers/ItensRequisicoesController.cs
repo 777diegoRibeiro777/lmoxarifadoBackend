@@ -1,132 +1,134 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using AlmoxarifadoDomain.NomeDaPasta;
+﻿using AlmoxarifadoDomain.Models;
+using AlmoxarifadoServices;
+using AlmoxarifadoServices.DTO;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AlmoxarifadoAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class ItensRequisicoesController : ControllerBase
     {
-        private readonly xAlmoxarifadoContext _context;
-
-        public ItensRequisicoesController(xAlmoxarifadoContext context)
+        private readonly ItensRequisicaoService _itensRequisicaoService;
+        private readonly EstoqueService _estoqueService;
+        public ItensRequisicoesController(ItensRequisicaoService itensRequisicaoService, EstoqueService estoqueService)
         {
-            _context = context;
+            _itensRequisicaoService = itensRequisicaoService;
+            _estoqueService = estoqueService;
         }
 
-        // GET: api/ItensRequisicoes
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ItensReq>>> GetItensReqs()
+        public IActionResult Get()
         {
-            if (_context.ItensReqs == null)
-            {
-                return NotFound();
-            }
-            return await _context.ItensReqs.ToListAsync();
-        }
-
-        // GET: api/ItensRequisicoes/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<ItensReq>> GetItensReq(int id)
-        {
-            if (_context.ItensReqs == null)
-            {
-                return NotFound();
-            }
-            var itensReq = await _context.ItensReqs.FindAsync(id);
-
-            if (itensReq == null)
-            {
-                return NotFound();
-            }
-
-            return itensReq;
-        }
-
-        // PUT: api/ItensRequisicoes/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutItensReq(int id, ItensReq itensReq)
-        {
-            if (id != itensReq.NumItem)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(itensReq).State = EntityState.Modified;
-
             try
             {
-                await _context.SaveChangesAsync();
+                var itensRequisicao = _itensRequisicaoService.ObterTodosItensRequisicao();
+                return Ok(itensRequisicao);
             }
-            catch (DbUpdateConcurrencyException)
+            catch (Exception)
             {
-                if (!ItensReqExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+
+                return StatusCode(500, "Ocorreu um erro ao acessar os dados. Por favor, tente novamente mais tarde.");
             }
 
-            return NoContent();
         }
 
-        // POST: api/ItensRequisicoes
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpGet("{numero}")]
+        public IActionResult GetPorID(int numero)
+        {
+            try
+            {
+                var itensRequisicao = _itensRequisicaoService.ObterItemRequisicaoPorNumero(numero);
+                if (itensRequisicao == null)
+                {
+                    return StatusCode(404, "Nenhum Usuario Encontrado com Esse Codigo");
+                }
+                return Ok(itensRequisicao);
+            }
+            catch (Exception)
+            {
+
+                return StatusCode(500, "Ocorreu um erro ao acessar os dados. Por favor, tente novamente mais tarde.");
+            }
+
+        }
+
         [HttpPost]
-        public async Task<ActionResult<ItensReq>> PostItensReq(ItensReq itensReq)
+        public IActionResult CriarItensRequisicao(ItensRequisicaoPostDTO itensRequisicao)
         {
-            if (_context.ItensReqs == null)
-            {
-                return Problem("Entity set 'xAlmoxarifadoContext.ItensReqs'  is null.");
-            }
-            _context.ItensReqs.Add(itensReq);
             try
             {
-                await _context.SaveChangesAsync();
+                var itensSalvos = _itensRequisicaoService.CriarItemRequisicao(itensRequisicao);
+                _estoqueService.AtualizarEstoqueAoSairRequisicao(new ItensRequisicao
+                {
+                    NumItem = itensSalvos.NumItem,
+                    IdPro = itensSalvos.IdPro,
+                    IdReq = itensSalvos.IdReq,
+                    IdSec = itensSalvos.IdSec,
+                    QtdPro = itensSalvos.QtdPro,
+                    PreUnit = itensSalvos.PreUnit,
+                    TotalItem = itensSalvos.TotalItem,
+                    TotalReal = itensSalvos.TotalReal
+                });
+                return Ok(itensSalvos);
             }
-            catch (DbUpdateException)
+            catch (Exception e)
             {
-                if (ItensReqExists(itensReq.NumItem))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
+                return StatusCode(500, e.Message);
             }
-
-            return CreatedAtAction("GetItensReq", new { id = itensReq.NumItem }, itensReq);
         }
 
-        // DELETE: api/ItensRequisicoes/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteItensReq(int id)
+        [HttpPut("{numero}")]
+        public IActionResult AtualizarItemRequisicao(int numero, ItensRequisicaoPutDTO novoItemRequisicao)
         {
-            if (_context.ItensReqs == null)
+            try
             {
-                return NotFound();
+                var itemAtualizado = _itensRequisicaoService.AtualizarItemRequisicao(numero, novoItemRequisicao);
+                if (itemAtualizado == null)
+                {
+                    return StatusCode(404, "Nenhum item encontrado com este ID");
+                }
+                _estoqueService.AtualizarEstoqueAoSairRequisicao(new ItensRequisicao
+                {
+                    NumItem = itemAtualizado.NumItem,
+                    IdPro = itemAtualizado.IdPro,
+                    IdReq = itemAtualizado.IdReq,
+                    IdSec = itemAtualizado.IdSec,
+                    QtdPro = itemAtualizado.QtdPro,
+                    PreUnit = itemAtualizado.PreUnit,
+                    TotalItem = itemAtualizado.QtdPro * itemAtualizado.PreUnit,
+                    TotalReal = itemAtualizado.QtdPro * itemAtualizado.PreUnit
+                });
+                return Ok(itemAtualizado);
             }
-            var itensReq = await _context.ItensReqs.FindAsync(id);
-            if (itensReq == null)
+            catch (Exception e)
             {
-                return NotFound();
+                return StatusCode(500, e.Message);
             }
-
-            _context.ItensReqs.Remove(itensReq);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
         }
 
-        private bool ItensReqExists(int id)
+        [HttpDelete("{numero}")]
+        public IActionResult DeletarItemRequisicao(int numero)
         {
-            return (_context.ItensReqs?.Any(e => e.NumItem == id)).GetValueOrDefault();
+            try
+            {
+                var itemRequisicao = _itensRequisicaoService.ObterItemRequisicaoPorNumero(numero);
+                if (itemRequisicao == null)
+                {
+                    return StatusCode(404, "Nenhum item encontrado com este ID");
+                }
+
+                var itemDeletado = _itensRequisicaoService.DeletarItemRequisicao(itemRequisicao);
+                if (itemDeletado == null)
+                {
+                    return StatusCode(404, "Ocorreu um erro ao excluir o item");
+                }
+                return Ok(itemDeletado);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Ocorreu um erro ao acessar os dados. Por favor, tente novamente mais tarde.");
+            }
         }
     }
 }
