@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AlmoxarifadoDomain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+834b79a75be1be36bfe2e3c7ee253dc0e341c032")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+732c5976dd3ee549f40a3c9bd5424d990bd8188e")]
 [assembly: System.Reflection.AssemblyProductAttribute("AlmoxarifadoDomain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AlmoxarifadoDomain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
