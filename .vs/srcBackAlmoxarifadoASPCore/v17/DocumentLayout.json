@@ -3,12 +3,17 @@
   "WorkspaceRootPath": "C:\\almoxarifadoback-main\\almoxarifadoback-main\\src\\srcBackAlmoxarifadoASPCore\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{1A7D2C83-FAC6-40D1-9D28-AD8648DBADED}|AlmoxarifadoAPI\\AlmoxarifadoAPI.csproj|c:\\almoxarifadoback-main\\almoxarifadoback-main\\src\\srcbackalmoxarifadoaspcore\\almoxarifadoapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{1A7D2C83-FAC6-40D1-9D28-AD8648DBADED}|AlmoxarifadoAPI\\AlmoxarifadoAPI.csproj|solutionrelative:almoxarifadoapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1A7D2C83-FAC6-40D1-9D28-AD8648DBADED}|AlmoxarifadoAPI\\AlmoxarifadoAPI.csproj|c:\\almoxarifadoback-main\\almoxarifadoback-main\\src\\srcbackalmoxarifadoaspcore\\almoxarifadoapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1A7D2C83-FAC6-40D1-9D28-AD8648DBADED}|AlmoxarifadoAPI\\AlmoxarifadoAPI.csproj|solutionrelative:almoxarifadoapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{EFA655E2-D775-48E4-99BD-54AEB62FDFD1}|AlmoxarifadoServices\\AlmoxarifadoServices.csproj|c:\\almoxarifadoback-main\\almoxarifadoback-main\\src\\srcbackalmoxarifadoaspcore\\almoxarifadoservices\\estoqueservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFA655E2-D775-48E4-99BD-54AEB62FDFD1}|AlmoxarifadoServices\\AlmoxarifadoServices.csproj|solutionrelative:almoxarifadoservices\\estoqueservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> 22b86e6736aa72ddd5160bff0d1fdca4726ec681
     }
   ],
   "DocumentGroupContainers": [
@@ -23,6 +28,7 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+<<<<<<< HEAD
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\almoxarifadoback-main\\almoxarifadoback-main\\src\\srcBackAlmoxarifadoASPCore\\AlmoxarifadoAPI\\appsettings.json",
               "RelativeDocumentMoniker": "AlmoxarifadoAPI\\appsettings.json",
@@ -44,6 +50,16 @@
               "ViewState": "AQIAABwAAAAAAAAAAAAAwEwAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-26T23:46:45.934Z",
+=======
+              "Title": "EstoqueService.cs",
+              "DocumentMoniker": "C:\\almoxarifadoback-main\\almoxarifadoback-main\\src\\srcBackAlmoxarifadoASPCore\\AlmoxarifadoServices\\EstoqueService.cs",
+              "RelativeDocumentMoniker": "AlmoxarifadoServices\\EstoqueService.cs",
+              "ToolTip": "C:\\almoxarifadoback-main\\almoxarifadoback-main\\src\\srcBackAlmoxarifadoASPCore\\AlmoxarifadoServices\\EstoqueService.cs",
+              "RelativeToolTip": "AlmoxarifadoServices\\EstoqueService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T23:18:14.225Z",
+>>>>>>> 22b86e6736aa72ddd5160bff0d1fdca4726ec681
               "EditorCaption": ""
             },
             {
