@@ -1,25 +1,5 @@
-using AlmoxarifadoDomain.NomeDaPasta;
-using AlmoxarifadoInfrastructure.Data;
-using AlmoxarifadoInfrastructure.Data.Interfaces;
-using AlmoxarifadoInfrastructure.Data.Repositories;
-using AlmoxarifadoServices;
-using Microsoft.EntityFrameworkCore;
-
-var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-builder.Services.AddDbContext<xAlmoxarifadoContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoDBSQL")));
-
-//Carregando Classes de Repositories
-builder.Services.AddScoped<xAlmoxarifadoContext>();
-builder.Services.AddScoped<IGrupoRepository,GrupoRepository>();
-
-
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
 using AlmoxarifadoDomain.Models;
+using AlmoxarifadoDomain.NomeDaPasta;
 using AlmoxarifadoInfrastructure.Data.Interfaces;
 using AlmoxarifadoInfrastructure.Data.Repositories;
 using AlmoxarifadoServices;
