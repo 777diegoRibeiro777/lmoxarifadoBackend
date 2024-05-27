@@ -64,6 +64,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.29, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.6, )"
             }
           },
           "imports": [

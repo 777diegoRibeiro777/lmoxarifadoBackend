@@ -1,11 +1,11 @@
-﻿namespace AlmoxarifadoDomain.NomeDaPasta
+﻿namespace AlmoxarifadoDomain.Models
 {
     public partial class Produto
     {
         public Produto()
         {
-            ItensNota = new HashSet<ItensNotum>();
-            ItensReqs = new HashSet<ItensReq>();
+            ItensNota = new HashSet<ItensNota>();
+            ItensReqs = new HashSet<ItensRequisicao>();
         }
 
         public int IdPro { get; set; }
@@ -19,7 +19,7 @@
 
         public virtual Classe IdClasNavigation { get; set; } = null!;
         public virtual UnidadeMedidum IdUnMedNavigation { get; set; } = null!;
-        public virtual ICollection<ItensNotum> ItensNota { get; set; }
-        public virtual ICollection<ItensReq> ItensReqs { get; set; }
+        public virtual ICollection<ItensNota> ItensNota { get; set; }
+        public virtual ICollection<ItensRequisicao> ItensReqs { get; set; }
     }
 }

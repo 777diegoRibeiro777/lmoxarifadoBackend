@@ -1,118 +1,103 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using AlmoxarifadoDomain.NomeDaPasta;
+﻿using AlmoxarifadoServices;
+using AlmoxarifadoServices.DTO;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AlmoxarifadoAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class RequisicoesController : ControllerBase
     {
-        private readonly xAlmoxarifadoContext _context;
+        private readonly RequisicaoService _requisicaoService;
 
-        public RequisicoesController(xAlmoxarifadoContext context)
+        public RequisicoesController(RequisicaoService requisicaoService)
         {
-            _context = context;
+            _requisicaoService = requisicaoService;
         }
 
-        // GET: api/Requisicoes
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Requisicao>>> GetRequisicaos()
+        public IActionResult Get()
         {
-            if (_context.Requisicaos == null)
-            {
-                return NotFound();
-            }
-            return await _context.Requisicaos.ToListAsync();
-        }
-
-        // GET: api/Requisicoes/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Requisicao>> GetRequisicao(int id)
-        {
-            if (_context.Requisicaos == null)
-            {
-                return NotFound();
-            }
-            var requisicao = await _context.Requisicaos.FindAsync(id);
-
-            if (requisicao == null)
-            {
-                return NotFound();
-            }
-
-            return requisicao;
-        }
-
-        // PUT: api/Requisicoes/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutRequisicao(int id, Requisicao requisicao)
-        {
-            if (id != requisicao.IdReq)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(requisicao).State = EntityState.Modified;
-
             try
             {
-                await _context.SaveChangesAsync();
+                var requisicao = _requisicaoService.ObterTodasRequisicoes();
+                return Ok(requisicao);
             }
-            catch (DbUpdateConcurrencyException)
+            catch (Exception)
             {
-                if (!RequisicaoExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                return StatusCode(500, "Ocorreu um erro ao acessar os dados.");
             }
 
-            return NoContent();
         }
 
-        // POST: api/Requisicoes
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpGet("{id}")]
+        public IActionResult GetPorID(int id)
+        {
+            try
+            {
+                var grupo = _requisicaoService.ObterRequisicaoPorId(id);
+                if (grupo == null)
+                {
+                    return StatusCode(404, "Nenhum Usuario Encontrado com Esse Codigo");
+                }
+                return Ok(grupo);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Ocorreu um erro ao acessar os dados.");
+            }
+
+        }
+
         [HttpPost]
-        public async Task<ActionResult<Requisicao>> PostRequisicao(Requisicao requisicao)
+        public IActionResult CriarRequisicao(RequisicaoPostDTO requisicao)
         {
-            if (_context.Requisicaos == null)
+            try
             {
-                return Problem("Entity set 'xAlmoxarifadoContext.Requisicaos'  is null.");
+                var requisicaoSalva = _requisicaoService.CriarRequisicao(requisicao);
+                return Ok(requisicaoSalva);
             }
-            _context.Requisicaos.Add(requisicao);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetRequisicao", new { id = requisicao.IdReq }, requisicao);
+            catch (Exception)
+            {
+                return StatusCode(500, "Ocorreu um erro ao acessar os dados.");
+            }
         }
 
-        // DELETE: api/Requisicoes/5
+        [HttpPut("{id}")]
+        public IActionResult AtualizarRequisicao(int id, RequisicaoPutDTO novaRequisicao)
+        {
+            try
+            {
+                var requisicaoAtualizada = _requisicaoService.AtualizarRequisicao(id, novaRequisicao);
+                return Ok(requisicaoAtualizada);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Ocorreu um erro ao acessar os dados.");
+            }
+        }
+
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteRequisicao(int id)
+        public IActionResult DeletarItemRequisicao(int id)
         {
-            if (_context.Requisicaos == null)
+            try
             {
-                return NotFound();
+                var requisicao= _requisicaoService.ObterRequisicaoPorId(id);
+                if (requisicao == null)
+                {
+                    return StatusCode(404, "Nenhum item encontrado com este ID");
+                }
+                var requisicaoDeletada = _requisicaoService.DeletarItemRequisicao(requisicao);
+                if (requisicaoDeletada == null)
+                {
+                    return StatusCode(404, "Ocorreu um erro ao excluir o item");
+                }
+                return Ok(requisicaoDeletada);
             }
-            var requisicao = await _context.Requisicaos.FindAsync(id);
-            if (requisicao == null)
+            catch (Exception)
             {
-                return NotFound();
+                return StatusCode(500, "Ocorreu um erro ao acessar os dados.");
             }
-
-            _context.Requisicaos.Remove(requisicao);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
-
-        private bool RequisicaoExists(int id)
-        {
-            return (_context.Requisicaos?.Any(e => e.IdReq == id)).GetValueOrDefault();
         }
     }
 }

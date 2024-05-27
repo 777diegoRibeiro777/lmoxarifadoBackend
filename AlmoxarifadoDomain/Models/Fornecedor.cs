@@ -1,4 +1,4 @@
-﻿namespace AlmoxarifadoDomain.NomeDaPasta
+﻿namespace AlmoxarifadoDomain.Models
 {
     public partial class Fornecedor
     {

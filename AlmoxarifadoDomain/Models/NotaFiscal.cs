@@ -1,10 +1,10 @@
-﻿namespace AlmoxarifadoDomain.NomeDaPasta
+﻿namespace AlmoxarifadoDomain.Models
 {
     public partial class NotaFiscal
     {
         public NotaFiscal()
         {
-            ItensNota = new HashSet<ItensNotum>();
+            ItensNota = new HashSet<ItensNota>();
         }
 
         public int IdNota { get; set; }
@@ -25,6 +25,6 @@
         public virtual Fornecedor? IdForNavigation { get; set; }
         public virtual Secretarium IdSecNavigation { get; set; } = null!;
         public virtual TipoNotum IdTipoNotaNavigation { get; set; } = null!;
-        public virtual ICollection<ItensNotum> ItensNota { get; set; }
+        public virtual ICollection<ItensNota> ItensNota { get; set; }
     }
 }

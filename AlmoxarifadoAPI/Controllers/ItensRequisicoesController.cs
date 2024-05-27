@@ -28,7 +28,7 @@ namespace AlmoxarifadoAPI.Controllers
             catch (Exception)
             {
 
-                return StatusCode(500, "Ocorreu um erro ao acessar os dados. Por favor, tente novamente mais tarde.");
+                return StatusCode(500, "Ocorreu um erro ao acessar os dados.");
             }
 
         }
@@ -48,7 +48,7 @@ namespace AlmoxarifadoAPI.Controllers
             catch (Exception)
             {
 
-                return StatusCode(500, "Ocorreu um erro ao acessar os dados. Por favor, tente novamente mais tarde.");
+                return StatusCode(500, "Ocorreu um erro ao acessar os dados.");
             }
 
         }
@@ -64,7 +64,7 @@ namespace AlmoxarifadoAPI.Controllers
                     NumItem = itensSalvos.NumItem,
                     IdPro = itensSalvos.IdPro,
                     IdReq = itensSalvos.IdReq,
-                    IdSec = itensSalvos.IdSec,
+                    IdSec = itensSalvos.IdSec, 
                     QtdPro = itensSalvos.QtdPro,
                     PreUnit = itensSalvos.PreUnit,
                     TotalItem = itensSalvos.TotalItem,
@@ -74,7 +74,7 @@ namespace AlmoxarifadoAPI.Controllers
             }
             catch (Exception e)
             {
-                return StatusCode(500, e.Message);
+                return StatusCode(500, e.Message );
             }
         }
 
@@ -112,7 +112,7 @@ namespace AlmoxarifadoAPI.Controllers
         {
             try
             {
-                var itemRequisicao = _itensRequisicaoService.ObterItemRequisicaoPorNumero(numero);
+                var itemRequisicao= _itensRequisicaoService.ObterItemRequisicaoPorNumero(numero);
                 if (itemRequisicao == null)
                 {
                     return StatusCode(404, "Nenhum item encontrado com este ID");
@@ -127,7 +127,7 @@ namespace AlmoxarifadoAPI.Controllers
             }
             catch (Exception)
             {
-                return StatusCode(500, "Ocorreu um erro ao acessar os dados. Por favor, tente novamente mais tarde.");
+                return StatusCode(500, "Ocorreu um erro ao acessar os dados.");
             }
         }
     }

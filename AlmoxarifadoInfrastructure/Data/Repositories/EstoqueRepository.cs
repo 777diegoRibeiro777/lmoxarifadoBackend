@@ -1,5 +1,4 @@
 ﻿using AlmoxarifadoDomain.Models;
-using AlmoxarifadoDomain.NomeDaPasta;
 using AlmoxarifadoInfrastructure.Data.Interfaces;
 
 namespace AlmoxarifadoInfrastructure.Data.Repositories
@@ -36,3 +35,4 @@ namespace AlmoxarifadoInfrastructure.Data.Repositories
         }
     }
 }
+

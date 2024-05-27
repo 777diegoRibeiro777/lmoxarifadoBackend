@@ -1,66 +1,18 @@
-C:\Users\Administrador\Documents\GitRegymatrix\almoxarifadoback\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\bin\Debug\net6.0\AlmoxarifadoDomain.deps.json
-C:\Users\Administrador\Documents\GitRegymatrix\almoxarifadoback\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\bin\Debug\net6.0\AlmoxarifadoDomain.dll
-C:\Users\Administrador\Documents\GitRegymatrix\almoxarifadoback\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\bin\Debug\net6.0\AlmoxarifadoDomain.pdb
-C:\Users\Administrador\Documents\GitRegymatrix\almoxarifadoback\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Administrador\Documents\GitRegymatrix\almoxarifadoback\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.AssemblyInfoInputs.cache
-C:\Users\Administrador\Documents\GitRegymatrix\almoxarifadoback\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.AssemblyInfo.cs
-C:\Users\Administrador\Documents\GitRegymatrix\almoxarifadoback\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.csproj.CoreCompileInputs.cache
-C:\Users\Administrador\Documents\GitRegymatrix\almoxarifadoback\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.dll
-C:\Users\Administrador\Documents\GitRegymatrix\almoxarifadoback\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\refint\AlmoxarifadoDomain.dll
-C:\Users\Administrador\Documents\GitRegymatrix\almoxarifadoback\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.pdb
-C:\Users\Administrador\Documents\GitRegymatrix\almoxarifadoback\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\ref\AlmoxarifadoDomain.dll
-C:\Users\professor.cetafest\Documents\GitRegymatrix\almoxarifadoback\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\bin\Debug\net6.0\AlmoxarifadoDomain.deps.json
-C:\Users\professor.cetafest\Documents\GitRegymatrix\almoxarifadoback\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\bin\Debug\net6.0\AlmoxarifadoDomain.dll
-C:\Users\professor.cetafest\Documents\GitRegymatrix\almoxarifadoback\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\bin\Debug\net6.0\AlmoxarifadoDomain.pdb
-C:\Users\professor.cetafest\Documents\GitRegymatrix\almoxarifadoback\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\professor.cetafest\Documents\GitRegymatrix\almoxarifadoback\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.AssemblyInfoInputs.cache
-C:\Users\professor.cetafest\Documents\GitRegymatrix\almoxarifadoback\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.AssemblyInfo.cs
-C:\Users\professor.cetafest\Documents\GitRegymatrix\almoxarifadoback\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.csproj.CoreCompileInputs.cache
-C:\Users\professor.cetafest\Documents\GitRegymatrix\almoxarifadoback\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.dll
-C:\Users\professor.cetafest\Documents\GitRegymatrix\almoxarifadoback\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\refint\AlmoxarifadoDomain.dll
-C:\Users\professor.cetafest\Documents\GitRegymatrix\almoxarifadoback\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.pdb
-C:\Users\professor.cetafest\Documents\GitRegymatrix\almoxarifadoback\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\ref\AlmoxarifadoDomain.dll
-C:\Users\diego\Desktop\almoxarifadoback-main\almoxarifadoback-main\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\bin\Debug\net6.0\AlmoxarifadoDomain.deps.json
-C:\Users\diego\Desktop\almoxarifadoback-main\almoxarifadoback-main\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\bin\Debug\net6.0\AlmoxarifadoDomain.dll
-C:\Users\diego\Desktop\almoxarifadoback-main\almoxarifadoback-main\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\bin\Debug\net6.0\AlmoxarifadoDomain.pdb
-C:\Users\diego\Desktop\almoxarifadoback-main\almoxarifadoback-main\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\diego\Desktop\almoxarifadoback-main\almoxarifadoback-main\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.AssemblyInfoInputs.cache
-C:\Users\diego\Desktop\almoxarifadoback-main\almoxarifadoback-main\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.AssemblyInfo.cs
-C:\Users\diego\Desktop\almoxarifadoback-main\almoxarifadoback-main\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.csproj.CoreCompileInputs.cache
-C:\Users\diego\Desktop\almoxarifadoback-main\almoxarifadoback-main\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.sourcelink.json
-C:\Users\diego\Desktop\almoxarifadoback-main\almoxarifadoback-main\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.dll
-C:\Users\diego\Desktop\almoxarifadoback-main\almoxarifadoback-main\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\refint\AlmoxarifadoDomain.dll
-C:\Users\diego\Desktop\almoxarifadoback-main\almoxarifadoback-main\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.pdb
-C:\Users\diego\Desktop\almoxarifadoback-main\almoxarifadoback-main\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\ref\AlmoxarifadoDomain.dll
-C:\Users\tarde.cetafaju\Desktop\almoxarifadoback-main\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\bin\Debug\net6.0\AlmoxarifadoDomain.deps.json
-C:\Users\tarde.cetafaju\Desktop\almoxarifadoback-main\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\bin\Debug\net6.0\AlmoxarifadoDomain.dll
-C:\Users\tarde.cetafaju\Desktop\almoxarifadoback-main\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\bin\Debug\net6.0\AlmoxarifadoDomain.pdb
-C:\Users\tarde.cetafaju\Desktop\almoxarifadoback-main\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\tarde.cetafaju\Desktop\almoxarifadoback-main\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.AssemblyInfoInputs.cache
-C:\Users\tarde.cetafaju\Desktop\almoxarifadoback-main\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.AssemblyInfo.cs
-C:\Users\tarde.cetafaju\Desktop\almoxarifadoback-main\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.csproj.CoreCompileInputs.cache
-C:\Users\tarde.cetafaju\Desktop\almoxarifadoback-main\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.dll
-C:\Users\tarde.cetafaju\Desktop\almoxarifadoback-main\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\refint\AlmoxarifadoDomain.dll
-C:\Users\tarde.cetafaju\Desktop\almoxarifadoback-main\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.pdb
-C:\Users\tarde.cetafaju\Desktop\almoxarifadoback-main\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\ref\AlmoxarifadoDomain.dll
-C:\Users\tarde.cetafaju\Desktop\almoxarifadoback-main\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\bin\Debug\net6.0\AlmoxarifadoDomain.runtimeconfig.json
-C:\Users\tarde.cetafaju\Desktop\almoxarifadoback-main\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.csproj.AssemblyReference.cache
-C:\Users\tarde.cetafaju\Desktop\almoxarifadoback-main\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.genruntimeconfig.cache
-C:\Users\diego\Desktop\almoxarifadoback-main - Aislan\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\bin\Debug\net6.0\AlmoxarifadoDomain.deps.json
-C:\Users\diego\Desktop\almoxarifadoback-main - Aislan\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\bin\Debug\net6.0\AlmoxarifadoDomain.runtimeconfig.json
-C:\Users\diego\Desktop\almoxarifadoback-main - Aislan\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\bin\Debug\net6.0\AlmoxarifadoDomain.dll
-C:\Users\diego\Desktop\almoxarifadoback-main - Aislan\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\bin\Debug\net6.0\AlmoxarifadoDomain.pdb
-C:\Users\diego\Desktop\almoxarifadoback-main - Aislan\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.csproj.AssemblyReference.cache
-C:\Users\diego\Desktop\almoxarifadoback-main - Aislan\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\diego\Desktop\almoxarifadoback-main - Aislan\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.AssemblyInfoInputs.cache
-C:\Users\diego\Desktop\almoxarifadoback-main - Aislan\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.AssemblyInfo.cs
-C:\Users\diego\Desktop\almoxarifadoback-main - Aislan\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.csproj.CoreCompileInputs.cache
-C:\Users\diego\Desktop\almoxarifadoback-main - Aislan\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.sourcelink.json
-C:\Users\diego\Desktop\almoxarifadoback-main - Aislan\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.dll
-C:\Users\diego\Desktop\almoxarifadoback-main - Aislan\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\refint\AlmoxarifadoDomain.dll
-C:\Users\diego\Desktop\almoxarifadoback-main - Aislan\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.pdb
-C:\Users\diego\Desktop\almoxarifadoback-main - Aislan\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.genruntimeconfig.cache
-C:\Users\diego\Desktop\almoxarifadoback-main - Aislan\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\obj\Debug\net6.0\ref\AlmoxarifadoDomain.dll
+C:\Users\diego\Desktop\AlmoxarifadoRefatorado-master\AlmoxarifadoRefatorado-master\AlmoxarifadoDomain\bin\Debug\net6.0\AlmoxarifadoDomain.deps.json
+C:\Users\diego\Desktop\AlmoxarifadoRefatorado-master\AlmoxarifadoRefatorado-master\AlmoxarifadoDomain\bin\Debug\net6.0\AlmoxarifadoDomain.runtimeconfig.json
+C:\Users\diego\Desktop\AlmoxarifadoRefatorado-master\AlmoxarifadoRefatorado-master\AlmoxarifadoDomain\bin\Debug\net6.0\AlmoxarifadoDomain.dll
+C:\Users\diego\Desktop\AlmoxarifadoRefatorado-master\AlmoxarifadoRefatorado-master\AlmoxarifadoDomain\bin\Debug\net6.0\AlmoxarifadoDomain.pdb
+C:\Users\diego\Desktop\AlmoxarifadoRefatorado-master\AlmoxarifadoRefatorado-master\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.csproj.AssemblyReference.cache
+C:\Users\diego\Desktop\AlmoxarifadoRefatorado-master\AlmoxarifadoRefatorado-master\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\diego\Desktop\AlmoxarifadoRefatorado-master\AlmoxarifadoRefatorado-master\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.AssemblyInfoInputs.cache
+C:\Users\diego\Desktop\AlmoxarifadoRefatorado-master\AlmoxarifadoRefatorado-master\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.AssemblyInfo.cs
+C:\Users\diego\Desktop\AlmoxarifadoRefatorado-master\AlmoxarifadoRefatorado-master\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.csproj.CoreCompileInputs.cache
+C:\Users\diego\Desktop\AlmoxarifadoRefatorado-master\AlmoxarifadoRefatorado-master\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.sourcelink.json
+C:\Users\diego\Desktop\AlmoxarifadoRefatorado-master\AlmoxarifadoRefatorado-master\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.dll
+C:\Users\diego\Desktop\AlmoxarifadoRefatorado-master\AlmoxarifadoRefatorado-master\AlmoxarifadoDomain\obj\Debug\net6.0\refint\AlmoxarifadoDomain.dll
+C:\Users\diego\Desktop\AlmoxarifadoRefatorado-master\AlmoxarifadoRefatorado-master\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.pdb
+C:\Users\diego\Desktop\AlmoxarifadoRefatorado-master\AlmoxarifadoRefatorado-master\AlmoxarifadoDomain\obj\Debug\net6.0\AlmoxarifadoDomain.genruntimeconfig.cache
+C:\Users\diego\Desktop\AlmoxarifadoRefatorado-master\AlmoxarifadoRefatorado-master\AlmoxarifadoDomain\obj\Debug\net6.0\ref\AlmoxarifadoDomain.dll
 C:\almoxarifadoback-main\almoxarifadoback-main\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\bin\Debug\net6.0\AlmoxarifadoDomain.deps.json
 C:\almoxarifadoback-main\almoxarifadoback-main\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\bin\Debug\net6.0\AlmoxarifadoDomain.runtimeconfig.json
 C:\almoxarifadoback-main\almoxarifadoback-main\src\srcBackAlmoxarifadoASPCore\AlmoxarifadoDomain\bin\Debug\net6.0\AlmoxarifadoDomain.dll

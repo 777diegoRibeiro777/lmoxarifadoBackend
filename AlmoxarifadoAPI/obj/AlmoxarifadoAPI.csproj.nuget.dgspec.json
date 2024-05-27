@@ -83,6 +83,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.6, )"
             }
           },
           "imports": [
@@ -168,6 +172,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.29, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.6, )"
             }
           },
           "imports": [
@@ -254,6 +262,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.29, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.6, )"
             }
           },
           "imports": [
@@ -325,6 +337,10 @@
               "target": "Package",
               "version": "[13.0.1, )"
             },
+            "CsvHelper": {
+              "target": "Package",
+              "version": "[32.0.3, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.29, )"
@@ -344,6 +360,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.29, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.6, )"
             }
           },
           "imports": [

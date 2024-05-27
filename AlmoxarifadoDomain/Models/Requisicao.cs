@@ -1,10 +1,10 @@
-﻿namespace AlmoxarifadoDomain.NomeDaPasta
+﻿namespace AlmoxarifadoDomain.Models
 {
     public partial class Requisicao
     {
         public Requisicao()
         {
-            ItensReqs = new HashSet<ItensReq>();
+            ItensReqs = new HashSet<ItensRequisicao>();
         }
 
         public int IdReq { get; set; }
@@ -20,6 +20,6 @@
 
         public virtual Cliente IdCliNavigation { get; set; } = null!;
         public virtual Setor? IdSetNavigation { get; set; }
-        public virtual ICollection<ItensReq> ItensReqs { get; set; }
+        public virtual ICollection<ItensRequisicao> ItensReqs { get; set; }
     }
 }
